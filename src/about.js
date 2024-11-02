@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { render } from "react-dom";
 import { Modal } from "bootstrap";
 
 export class BsModal extends Component {

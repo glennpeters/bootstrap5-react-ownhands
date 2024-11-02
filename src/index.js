@@ -1,7 +1,19 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+// import React, { Component } from "react";
+// import { render } from "react-dom";
+
+import React from "react";
+import { createRoot } from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+const root = createRoot(
+    document.getElementById("root") as HTMLElement
+);
+
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+
+
 
 import { BsModal } from "./bs-modal";
 
@@ -19,7 +31,7 @@ class App extends Component {
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark p-0">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              Navbar
+              OwnHands
             </a>
             <button
               className="navbar-toggler"
@@ -89,6 +101,19 @@ class App extends Component {
         <main class="py-5">
           <h1>OwnHands Story Search</h1>
 
+          <h2>To Do</h2>
+
+          <ul>
+            <li>Audit / Update npm modules</li>
+            <li>authorization (Firebase)</li>
+            <li>Data (Firebase)</li>
+          </ul>
+
+          <h2>React updates</h2>
+          <ul>
+            <li>https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis</li>
+          </ul>
+
           <BsModal />
         </main>
 
@@ -98,4 +123,22 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));
+root.render(
+   <React.StrictMode>
+      <App />
+   </React.StrictMode>
+);
+reportWebVitals();
+
+// Before
+// import { render } from 'react-dom';
+// const container = document.getElementById('app');
+// render(<App tab="home" />, container);
+
+// // After
+// import { createRoot } from 'react-dom/client';
+// const container = document.getElementById('app');
+// const root = createRoot(container); // createRoot(container!) if you use TypeScript
+// root.render(<App tab="home" />);
+
+// render(<App />, document.getElementById("root"));
