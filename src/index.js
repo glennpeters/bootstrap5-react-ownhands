@@ -85,7 +85,14 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <BsModal />
+
+        <main class="py-5">
+          <h1>OwnHands Story Search</h1>
+
+          <BsModal />
+        </main>
+
+
       </div>
     );
   }
